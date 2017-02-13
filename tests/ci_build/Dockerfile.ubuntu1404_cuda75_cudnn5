@@ -33,3 +33,5 @@ RUN pip install graphviz
 RUN pip install opencv-python
 RUN apt-get -y install git
 RUN pip install --upgrade setuptools
+RUN pip install matplotlib
+RUN pip install sklearn
