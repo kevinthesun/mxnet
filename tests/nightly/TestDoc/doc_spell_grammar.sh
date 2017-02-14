@@ -37,6 +37,7 @@ make html
 
 echo "Fetch dictionary"
 cd ../tests/nightly/TestDoc
+rm -rf web-data
 git clone https://github.com/kevinthesun/web-data.git
 cd web-data
 git checkout --track origin/AddDictionary
