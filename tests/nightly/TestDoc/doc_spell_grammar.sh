@@ -27,7 +27,7 @@ cd ..
 yum -y install enchant
 pip install pyenchant
 
-rm -rf webdata
+rm -rf web-data
 git clone https://github.com/kevinthesun/web-data.git
 cd web-data
 git checkout --track origin/AddDictionary
