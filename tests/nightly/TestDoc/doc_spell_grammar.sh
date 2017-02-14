@@ -27,7 +27,7 @@ cd ..
 yum -y install enchant
 pip install pyenchant
 
-git clone https://github.com/dmlc/web-data.git
+git clone https://github.com/kevinthesun/web-data.git
 cp web-data/mxnet/doc/en_US-large.aff web-data/mxnet/doc/en_US-large.dic web-data/mxnet/doc/en_US.aff web-data/mxnet/doc/en_US.dic /usr/share/myspell
 pip install grammar-check
 pip install html2text
