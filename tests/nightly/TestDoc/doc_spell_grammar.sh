@@ -41,10 +41,10 @@ rm -rf web-data
 git clone https://github.com/kevinthesun/web-data.git
 cd web-data
 git checkout --track origin/AddDictionary
+cd ..
 cp web-data/mxnet/doc/en_US-large.aff web-data/mxnet/doc/en_US-large.dic web-data/mxnet/doc/en_US.aff web-data/mxnet/doc/en_US.dic /usr/share/myspell
 
 echo "Check spell and grammar for documentation"
-cd ..
 python doc_spell_checker.py
 
 echo "Check spell and grammar End"
