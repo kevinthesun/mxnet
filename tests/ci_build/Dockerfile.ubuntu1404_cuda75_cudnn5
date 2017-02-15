@@ -11,12 +11,10 @@ RUN sudo apt-get install -y python-dev python-numpy libtbb2 libtbb-dev libjpeg-d
 #RUN apt-get install -y libopencv-dev
 RUN git clone https://github.com/Itseez/opencv.git
 RUN cd opencv
-RUN mkdir release
-RUN cd release
 RUN cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
 RUN make -j8
 RUN sudo make install
-RUN cd ../..
+RUN cd ..
 
 # BLAS
 RUN apt-get install -y libatlas-base-dev
