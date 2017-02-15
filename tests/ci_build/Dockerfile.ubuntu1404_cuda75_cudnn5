@@ -1,9 +1,6 @@
 FROM nvidia/cuda:7.5-cudnn5-devel
 MAINTAINER Ly Nguyen <lynguyen@amazon.com>
 
-#Reinstall pip
-RUN python -m pip install -U pip
-
 # OPENCV
 RUN apt-get update
 #RUN apt-get install -y libopencv-dev
@@ -37,6 +34,7 @@ RUN apt-get install -y maven default-jdk
 
 #NOTEBOOK
 RUN apt-get -y install ipython ipython-notebook
+RUN python -m pip install -U pip
 RUN pip install jupyter
 RUN apt-get -y install graphviz
 RUN pip install graphviz
