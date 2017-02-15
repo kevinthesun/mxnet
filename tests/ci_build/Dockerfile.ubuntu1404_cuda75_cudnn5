@@ -1,9 +1,11 @@
 FROM nvidia/cuda:7.5-cudnn5-devel
 MAINTAINER Ly Nguyen <lynguyen@amazon.com>
 
-#Install git
+#Install dependencies
 RUN apt-get update
-RUN apt-get install -y git
+RUN sudo apt-get install build-essential
+RUN sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+RUN sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
 
 # OPENCV
 #RUN apt-get install -y libopencv-dev
