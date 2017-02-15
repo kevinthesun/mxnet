@@ -2,7 +2,7 @@ FROM nvidia/cuda:7.5-cudnn5-devel
 MAINTAINER Ly Nguyen <lynguyen@amazon.com>
 
 #Install git
-RUN apt-get install -y git-all
+RUN apt-get install -y git
 
 # OPENCV
 RUN apt-get update
