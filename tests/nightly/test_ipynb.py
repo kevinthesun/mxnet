@@ -149,7 +149,23 @@ class NotebookTester(object):
                         if len(error) == 0:
                             cell_num = self.__verify_output(path, output_nb)
                             if cell_num > 0:
-                                error = "Output in cell No.%d has changed." % cell_num
+                                #Output changes may come from model change in server.
+                                #Double check this.
+                                try:
+                                    rerun_nb = nbformat.read(open(output_nb), as_version=4)
+                                    rerun_eprocessor = CustomizedPreprocessor(timeout=900)
+                                    rerun_eprocessor.preprocess(rerun_nb,
+                                                                {'metadata': {'path': parent_dir}})
+                                finally:
+                                    double_check_nb = os.path.splitext(nb_name)[0] + \
+                                                      "_double_check.ipynb"
+                                    nbformat.write(rerun_nb, open(double_check_nb, 'w'))
+                                    double_check_cell = self.__verify_output(output_nb,
+                                                                             double_check_nb)
+                                    if double_check_cell > 0:
+                                        error = "Output in cell No.%d has changed." \
+                                        % double_check_cell
+                                    os.remove(double_check_nb)
                         os.remove(output_nb)
                         return error
         return error
