@@ -2,10 +2,10 @@ FROM nvidia/cuda:7.5-cudnn5-devel
 MAINTAINER Ly Nguyen <lynguyen@amazon.com>
 
 #Install git
+RUN apt-get update
 RUN apt-get install -y git
 
 # OPENCV
-RUN apt-get update
 #RUN apt-get install -y libopencv-dev
 RUN git clone https://github.com/Itseez/opencv.git
 RUN cd opencv
