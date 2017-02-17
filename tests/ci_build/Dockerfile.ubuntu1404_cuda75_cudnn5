@@ -8,10 +8,11 @@ RUN sudo apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev li
 RUN sudo apt-get install -y python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
 
 #OPENCV
-RUN git clone https://github.com/Itseez/opencv.git && \
-cd opencv && \
-mkdir release && \
-cd release && \
+RUN mkdir opencv && \
+curl -s -L https://github.com/opencv/opencv/archive/3.2.0.zip -o /opencv/opencv.zip && \
+unzip -q /opencv/opencv.zip -d /opencv && \
+mkdir /opencv/opencv-3.2.0/build && \
+cd /opencv/opencv-3.2.0/build && \
 cmake -q \
       -D OPENCV_ENABLE_NONFREE=OFF \
       -D WITH_1394=OFF \
@@ -111,8 +112,9 @@ cmake -q \
       -D CMAKE_INCLUDE_PATH=$DEPS_PATH/include \
       -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=$DEPS_PATH .. || exit -1 && \
-make -j8 && \
-make install
+make -j8 || exit -1 && \
+make install && \
+cd ../..
 
 # BLAS
 RUN apt-get install -y libatlas-base-dev
