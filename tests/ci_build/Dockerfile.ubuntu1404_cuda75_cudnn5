@@ -128,10 +128,10 @@ cmake -q \
       -D BUILD_opencv_highgui=OFF \
       -D BUILD_opencv_viz=OFF \
       -D BUILD_opencv_videoio=OFF \
-      -D CMAKE_LIBRARY_PATH=$DEPS_PATH/lib \
-      -D CMAKE_INCLUDE_PATH=$DEPS_PATH/include \
+      -D CMAKE_LIBRARY_PATH=/opencv/lib \
+      -D CMAKE_INCLUDE_PATH=/opencv/include \
       -D CMAKE_BUILD_TYPE=RELEASE \
-      -D CMAKE_INSTALL_PREFIX=$DEPS_PATH .. || exit -1 && \
+      -D CMAKE_INSTALL_PREFIX=/opencv .. || exit -1 && \
 make -j8 || exit -1 && \
 make install && \
 cd ../..
