@@ -106,10 +106,10 @@ cmake -q \
       -D BUILD_FAT_JAVA_LIB=OFF \
       -D BUILD_CUDA_STUBS=OFF \
       -D BUILD_ZLIB=OFF \
-      -D BUILD_TIFF=OFF \
+      -D BUILD_TIFF=ON \
       -D BUILD_JASPER=OFF \
-      -D BUILD_JPEG=OFF \
-      -D BUILD_PNG=OFF \
+      -D BUILD_JPEG=ON \
+      -D BUILD_PNG=ON \
       -D BUILD_OPENEXR=OFF \
       -D BUILD_TBB=OFF \
       -D BUILD_opencv_calib3d=OFF \
@@ -134,6 +134,7 @@ cmake -q \
       -D CMAKE_INSTALL_PREFIX=/opencv .. || exit -1 && \
 make -j8 || exit -1 && \
 make install && \
+export PKG_CONFIG_PATH=/opencv/lib/pkgconfig && \
 cd ../..
 
 #NOTEBOOK
