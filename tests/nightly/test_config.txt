@@ -3,4 +3,4 @@
 #If test_ignored is set to "@@@ IGNORE_ALL", no notebook will be tested.
 [Folder Path]
 test_path = mxnet-notebooks/python/
-test_ignored = mxnet-notebooks/python/basic/mixed.ipynb, mxnet-notebooks/python/how_to/finetune.ipynb, mxnet-notebooks/python/moved-from-mxnet
+test_ignored = mxnet-notebooks/python/basic/mixed.ipynb, mxnet-notebooks/python/how_to/finetune.ipynb, mxnet-notebooks/python/rnn/lstm.ipynb, mxnet-notebooks/python/recommendation_systems/cdl/collaborative-dl.ipynb, mxnet-notebooks/python/tutorials/understanding_vanish_gradient.ipynb, mxnet-notebooks/python/moved-from-mxnet
