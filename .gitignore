@@ -133,6 +133,7 @@ lib
 #Notebook Automated Test
 !tests/nightly/test_config.txt
 !tests/nightly/TestNotebook
+!tests/nightly/test_config_bak.txt
 
 # pip building tools
 tools/pip_package/build
