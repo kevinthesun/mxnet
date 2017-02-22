@@ -146,7 +146,7 @@ class NotebookTester(object):
                             nbformat.write(notebook, output_file)
                         output_file.close()
                         nb_file.close()
-                        if len(error) != 0:
+                        if len(error) == 0:
                             cell_num = self.__verify_output(path, output_nb)
                             if cell_num > 0:
                                 #Output changes may come from model change in server.
