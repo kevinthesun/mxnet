@@ -226,19 +226,22 @@ class NotebookTester(object):
         ret : str
         Concatenation of all text output contents
         """
-        ret = ''
+        ret = ''"
+        WARNING = "DeprecationWarning: Interpreting naive datetime"
         for out_dict in outputs:
             for key, val in out_dict.items():
                 if str(key).startswith('text'):
                     for content in val:
-                        ret += str(content)
+                        if not WARNING in content:
+                            ret += str(content)
                 elif key == 'data':
                     for dt_key, dt_val in val.items():
                         if str(dt_key).startswith('text') and not \
                            str(dt_key).startswith('text/html'):
                             for dt_content in dt_val:
                                 if not str(dt_content).startswith('<matplotlib') and not \
-                                   str(dt_content).startswith('<graphviz'):
+                                   str(dt_content).startswith('<graphviz') and not \
+                                   WARNING in str(dt_content):
                                     ret += str(dt_content)
         return ret
 
