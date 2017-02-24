@@ -226,7 +226,7 @@ class NotebookTester(object):
         ret : str
         Concatenation of all text output contents
         """
-        ret = ''"
+        ret = ''
         WARNING = "DeprecationWarning: Interpreting naive datetime"
         for out_dict in outputs:
             for key, val in out_dict.items():
