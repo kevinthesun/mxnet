@@ -276,10 +276,13 @@ class NotebookTester(object):
                 test_summary.write("\n%s:\n" % fail_nb)
                 test_summary.write("%s\n" % error)
                 print fail_nb
-            test_summary.write("\nTest result start\nFail\nTest result end\n")
+            test_summary.write("Test result start\nFail\nTest result end\n")
         else:
             test_summary.write("\nAll notebook tests passed!\n")
             test_summary.write("\nTest result start Success Test result end\n")
+        test_summary.write("Test result start\n")
+        test_summary.write("Passed: %d of %d\n" % (len(nb_to_test) - len(fail_nb_dict), len(nb_to_test)))
+        test_summary.write("Test result end\n")
         test_summary.close()
         print "Test summarys are stored in test_summary.txt"
 
