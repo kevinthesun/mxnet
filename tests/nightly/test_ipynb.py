@@ -250,6 +250,7 @@ class NotebookTester(object):
         """Run test using config file
         """
         nb_to_test = self.__read_config(self.test_config)
+        os.remove('test_summary.txt')
         test_summary = open('test_summary.txt', mode='w')
         fail_nb_dict = {}
         test_summary.write("%d notebooks were tested:\n" % len(nb_to_test))
