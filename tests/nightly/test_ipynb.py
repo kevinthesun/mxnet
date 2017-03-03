@@ -276,7 +276,7 @@ class NotebookTester(object):
                 test_summary.write("\n%s:\n" % fail_nb)
                 test_summary.write("%s\n" % error)
                 print fail_nb
-            test_summary.write("\nTest result start Fail Test result end\n")
+            test_summary.write("\nTest result start\nFail\nTest result end\n")
         else:
             test_summary.write("\nAll notebook tests passed!\n")
             test_summary.write("\nTest result start Success Test result end\n")
