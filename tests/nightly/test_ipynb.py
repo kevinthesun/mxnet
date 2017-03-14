@@ -250,11 +250,8 @@ class NotebookTester(object):
         """Run test using config file
         """
         nb_to_test = self.__read_config(self.test_config)
-        test_summary = open('test_summary.txt', mode='w')
         fail_nb_dict = {}
-        test_summary.write("%d notebooks were tested:\n" % len(nb_to_test))
         for test_nb in nb_to_test:
-            test_summary.write("%s\n" % test_nb)
             print "Start to test %s.\n" % test_nb
             error = self.__notebook_run(test_nb)
             if len(error) == 0:
@@ -269,20 +266,21 @@ class NotebookTester(object):
         print "%d notebooks tested, %d succeeded, %d failed" % (len(nb_to_test),
                                                                 len(nb_to_test) - len(fail_nb_dict),
                                                                 len(fail_nb_dict))
+
+        print "Test Summary Start\n"
+        print "%d notebooks were tested:\n" % len(nb_to_test)
         if len(fail_nb_dict) > 0:
-            test_summary.write("\n%d notebook tests failed:\n" % len(fail_nb_dict))
+            print "\n%d notebook tests failed:\n" % len(fail_nb_dict)
             print "Following are failed notebooks:"
             for fail_nb, error in fail_nb_dict.items():
-                test_summary.write("\n%s:\n" % fail_nb)
-                test_summary.write("%s\n" % error)
-                print fail_nb
+                print "\n%s:\n" % fail_nb
+                print "%s\n" % error
         else:
-            test_summary.write("\nAll notebook tests passed!\n")
-        test_summary.write("Test result start\n")
-        test_summary.write("Passed: %d of %d\n" % (len(nb_to_test) - len(fail_nb_dict), len(nb_to_test)))
-        test_summary.write("Test result end\n")
-        test_summary.close()
-        print "Test summarys are stored in test_summary.txt"
+            print "\nAll notebook tests passed!\n"
+        print "Test result start\n"
+        print "Passed: %d of %d\n" % (len(nb_to_test) - len(fail_nb_dict), len(nb_to_test))
+        print "Test result end\n"
+        print "Test Summary End\n"
 
 if __name__ == "__main__":
     NB_TESTER = NotebookTester('test_config.txt')
