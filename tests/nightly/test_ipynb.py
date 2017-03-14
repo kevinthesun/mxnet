@@ -269,6 +269,8 @@ class NotebookTester(object):
 
         print "Test Summary Start\n"
         print "%d notebooks were tested:\n" % len(nb_to_test)
+        for test_nb in nb_to_test:
+            print "%s.\n" % test_nb
         if len(fail_nb_dict) > 0:
             print "\n%d notebook tests failed:\n" % len(fail_nb_dict)
             print "Following are failed notebooks:"
