@@ -270,19 +270,19 @@ class NotebookTester(object):
         print "Test Summary Start\n"
         print "%d notebooks were tested:\n" % len(nb_to_test)
         for test_nb in nb_to_test:
-            print "%s.\n" % test_nb
+            print "%s." % test_nb
         if len(fail_nb_dict) > 0:
-            print "\n%d notebook tests failed:\n" % len(fail_nb_dict)
+            print "\n%d notebook tests failed:" % len(fail_nb_dict)
             print "Following are failed notebooks:"
             for fail_nb, error in fail_nb_dict.items():
-                print "\n%s:\n" % fail_nb
+                print "%s:" % fail_nb
                 print "%s\n" % error
         else:
             print "\nAll notebook tests passed!\n"
-        print "Test result start\n"
-        print "Passed: %d of %d\n" % (len(nb_to_test) - len(fail_nb_dict), len(nb_to_test))
-        print "Test result end\n"
-        print "Test Summary End\n"
+        print "Test result start"
+        print "Passed: %d of %d" % (len(nb_to_test) - len(fail_nb_dict), len(nb_to_test))
+        print "Test result end"
+        print "Test Summary End"
 
 if __name__ == "__main__":
     NB_TESTER = NotebookTester('test_config.txt')
