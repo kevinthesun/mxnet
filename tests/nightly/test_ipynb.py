@@ -68,6 +68,11 @@ class NotebookTester(object):
     """
     def __init__(self, test_config):
         self.test_config = test_config
+        self._RERUN_ERROR = \
+                            ["Kernel died before replying to kernel_info",
+                             "URLError: <urlopen error [Errno 110] Connection timed out>",
+                             "HTTPError: HTTP Error 500: Internal Server Error",
+                             "IOError: [Errno socket error] [Errno 110] Connection timed out"]
 
     def __read_config(self, test_config):
         """Read notebooks to be tested from test config file.
@@ -140,7 +145,12 @@ class NotebookTester(object):
                 except Exception as ex_error:
                     error = str(ex_error)
                 finally:
-                    if error != 'Kernel died before replying to kernel_info':
+                    is_rerun = False
+                    for rerun_error in self._RERUN_ERROR:
+                        if error.endswith(rerun_error):
+                            is_rerun = True
+                            break
+                    if not is_rerun:
                         output_nb = os.path.splitext(nb_name)[0] + "_output.ipynb"
                         with open(output_nb, mode='w') as output_file:
                             nbformat.write(notebook, output_file)
