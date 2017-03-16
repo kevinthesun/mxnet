@@ -156,6 +156,9 @@ class NotebookTester(object):
                                     rerun_eprocessor = CustomizedPreprocessor(timeout=900)
                                     rerun_eprocessor.preprocess(rerun_nb,
                                                                 {'metadata': {'path': parent_dir}})
+                                except Exception as dual_ex_error:
+                                    error = str(dual_ex_error)
+                                    return error
                                 finally:
                                     double_check_nb = os.path.splitext(nb_name)[0] + \
                                                       "_double_check.ipynb"
