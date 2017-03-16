@@ -138,7 +138,7 @@ class NotebookTester(object):
             notebook = nbformat.read(nb_file, as_version=4)
             eprocessor = CustomizedPreprocessor(timeout=900)
             #Use a loop to avoid "Kernel died before replying to kernel_info" error, repeat 5 times
-            for _ in range(0, 5):
+            for rerun_time in range(0, 5):
                 error = ""
                 try:
                     eprocessor.preprocess(notebook, {'metadata': {'path': parent_dir}})
@@ -147,9 +147,13 @@ class NotebookTester(object):
                 finally:
                     is_rerun = False
                     for rerun_error in self._RERUN_ERROR:
-                        if error.endswith(rerun_error):
+                        if rerun_error in error:
                             is_rerun = True
                             break
+                    if is_rerun and rerun_time == 4 \
+                       and not "Kernel died before replying to kernel_info" in error:
+                        error = ""
+                        return error
                     if not is_rerun:
                         output_nb = os.path.splitext(nb_name)[0] + "_output.ipynb"
                         with open(output_nb, mode='w') as output_file:
