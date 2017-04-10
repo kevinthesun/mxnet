@@ -72,6 +72,7 @@ class NotebookTester(object):
                             ["Kernel died before replying to kernel_info",
                              "URLError: <urlopen error [Errno 110] Connection timed out>",
                              "HTTPError: HTTP Error 500: Internal Server Error",
+                             "HTTPError: HTTP Error 500: INTERNAL SERVER ERROR",
                              "IOError: [Errno socket error] [Errno 110] Connection timed out"]
 
     def __read_config(self, test_config):
