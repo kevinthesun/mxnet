@@ -164,18 +164,46 @@ width=400/>
 
 - 电脑配置
 
-  | name | hardware | software |
-  | --- | --- | --- |
-  | GTX980 | Xeon E5-1650 v3, 4 x GTX 980 | GCC 4.8, CUDA 7.5, CUDNN 3 |
-  | TitanX | dual Xeon E5-2630 v3, 4 x GTX Titan X | GCC 4.8, CUDA 7.5, CUDNN 3 |
-  | EC2-g2.8x | Xeon E5-2670, 2 x GRID K520, 10G Ethernet | GCC 4.8, CUDA 7.5, CUDNN 3 |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  name 
+     -  hardware 
+     -  software 
+   * -  GTX980 
+     -  Xeon E5-1650 v3, 4 x GTX 980 
+     -  GCC 4.8, CUDA 7.5, CUDNN 3 
+   * -  TitanX 
+     -  dual Xeon E5-2630 v3, 4 x GTX Titan X 
+     -  GCC 4.8, CUDA 7.5, CUDNN 3 
+   * -  EC2-g2.8x 
+     -  Xeon E5-2670, 2 x GRID K520, 10G Ethernet 
+     -  GCC 4.8, CUDA 7.5, CUDNN 3 
+```
 
 - 数据集
 
-  | name | class | image size | training | testing |
-  | ---- | ----: | ---------: | -------: | ------: |
-  | CIFAR 10 | 10 | 28 × 28 × 3 | 60,000  | 10,000 |
-  | ILSVRC 12 | 1,000 | 227 × 227 × 3 | 1,281,167 | 50,000 |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  name 
+     -  class 
+     -  image size 
+     -  training 
+     -  testing 
+   * -  CIFAR 10 
+     -  10 
+     -  28 × 28 × 3 
+     -  60,000  
+     -  10,000 
+   * -  ILSVRC 12 
+     -  1,000 
+     -  227 × 227 × 3 
+     -  1,281,167 
+     -  50,000 
+```
 
 ### CIFAR 10
 
@@ -187,9 +215,17 @@ python train_cifar10.py --batch-size 128 --lr 0.1 --lr-factor .94 --num-epoch 50
 
 - 效率
 
-  | 1 GTX 980 | 2 GTX 980 | 4 GTX 980 |
-  | --- | --- | --- |
-  | 842 img/sec | 1640 img/sec | 2943 img/sec |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  1 GTX 980 
+     -  2 GTX 980 
+     -  4 GTX 980 
+   * -  842 img/sec 
+     -  1640 img/sec 
+     -  2943 img/sec 
+```
 
 - 准确率 vs 迭代次数（[交互式图表](https://docs.google.com/spreadsheets/d/1kV2aDUXNyPn3t5nj8UdPA61AdRF4_w1UNmxaqu-cRBA/pubchart?oid=761035336&format=interactive)）：
 
@@ -213,14 +249,53 @@ python train_cifar10.py --batch-size 128 --lr 0.1 --lr-factor .94 --num-epoch 50
 
 - 效率
 
-  | Cluster | # machines | # GPUs | batch size | kvstore | epoch time |
-  | --- | --- | --- | --- | --- | ---: |
-  | TitanX | 1 | 1 | 96 | `none` | 14,545 |
-  | - | - | 2 | - | `local` | 19,692 |
-  | - | - | 4 | - | - | 20,014 |
-  | - | - | 2 | - | `local_allreduce_device` | 9,142 |
-  | - | - | 4 | - | - | 8,533 |
-  | - | - | - | 384 | - | 5,161 |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  Cluster 
+     -  # machines 
+     -  # GPUs 
+     -  batch size 
+     -  kvstore 
+     -  epoch time 
+   * -  TitanX 
+     -  1 
+     -  1 
+     -  96 
+     -  `none` 
+     -  14,545 
+   * -  - 
+     -  - 
+     -  2 
+     -  - 
+     -  `local` 
+     -  19,692 
+   * -  - 
+     -  - 
+     -  4 
+     -  - 
+     -  - 
+     -  20,014 
+   * -  - 
+     -  - 
+     -  2 
+     -  - 
+     -  `local_allreduce_device` 
+     -  9,142 
+   * -  - 
+     -  - 
+     -  4 
+     -  - 
+     -  - 
+     -  8,533 
+   * -  - 
+     -  - 
+     -  - 
+     -  384 
+     -  - 
+     -  5,161 
+```
 
 #### 开始批处理正交化
 
@@ -228,19 +303,83 @@ python train_cifar10.py --batch-size 128 --lr 0.1 --lr-factor .94 --num-epoch 50
 
 - 效率
 
-  | Cluster | # machines | # GPUs | batch size | kvstore | epoch time |
-  | --- | --- | --- | --- | --- | ---: |
-  | GTX980 | 1 | 1 |  32 | `local` | 13,210 |
-  | - | - | 2 |  64 | - | 7,198 |
-  | - | - | 3 |  128 | - | 4,952 |
-  | - | - | 4 |  - | - | 3,589 |
-  | TitanX | 1 | 1 | 128 | `none` | 10,666 |
-  | - | - | 2 | - | `local` | 5,161 |
-  | - | - | 3 | - | - | 3,460 |
-  | - | - | 4 | - | - | 2,844 |
-  | - | - | - | 512 | - | 2,495 |
-  | EC2-g2.8x | 1 | 4 | 144 |  `local` | 14,203 |
-  | - | 10 | 40 | 144 |  `dist_sync` | 1,422 |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  Cluster 
+     -  # machines 
+     -  # GPUs 
+     -  batch size 
+     -  kvstore 
+     -  epoch time 
+   * -  GTX980 
+     -  1 
+     -  1 
+     -   32 
+     -  `local` 
+     -  13,210 
+   * -  - 
+     -  - 
+     -  2 
+     -   64 
+     -  - 
+     -  7,198 
+   * -  - 
+     -  - 
+     -  3 
+     -   128 
+     -  - 
+     -  4,952 
+   * -  - 
+     -  - 
+     -  4 
+     -   - 
+     -  - 
+     -  3,589 
+   * -  TitanX 
+     -  1 
+     -  1 
+     -  128 
+     -  `none` 
+     -  10,666 
+   * -  - 
+     -  - 
+     -  2 
+     -  - 
+     -  `local` 
+     -  5,161 
+   * -  - 
+     -  - 
+     -  3 
+     -  - 
+     -  - 
+     -  3,460 
+   * -  - 
+     -  - 
+     -  4 
+     -  - 
+     -  - 
+     -  2,844 
+   * -  - 
+     -  - 
+     -  - 
+     -  512 
+     -  - 
+     -  2,495 
+   * -  EC2-g2.8x 
+     -  1 
+     -  4 
+     -  144 
+     -   `local` 
+     -  14,203 
+   * -  - 
+     -  10 
+     -  40 
+     -  144 
+     -   `dist_sync` 
+     -  1,422 
+```
 
 - 收敛
 

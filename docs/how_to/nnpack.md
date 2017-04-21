@@ -11,11 +11,19 @@ The underlying implementation of NNPACK utilize some other acceleration methods,
 nnpack only support Linux or OS X host system, that is to say, Windows is not supported at present.
 The following table will tell you which satisfaction will NNPACK work.
 
-| operation      | conditions |
-|:---------      |:---------- |
-|convolution     |2d convolution `and` no-bias=False `and` dilate=(1,1) `and` num_group=1 `and` batch-size = 1 or batch-size > 1 && stride = (1,1);|
-|pooling         | max-pooling `and` kernel=(2,2) `and` stride=(2,2) `and` pooling_convention=full    |
-|fully-connected| without any restrictions |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  operation      
+     -  conditions 
+   * - convolution     
+     - 2d convolution `and` no-bias=False `and` dilate=(1,1) `and` num_group=1 `and` batch-size = 1 or batch-size > 1 && stride = (1,1);
+   * - pooling         
+     -  max-pooling `and` kernel=(2,2) `and` stride=(2,2) `and` pooling_convention=full    
+   * - fully-connected
+     -  without any restrictions 
+```
 
 ### Build/Install NNPACK with MXNet
 

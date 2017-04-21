@@ -11,11 +11,23 @@ You can get the source code for this example from [GitHub](https://github.com/dm
 
 We trained a simple fcn-xs model, using the following parameters:
 
-    | model | lr (fixed) | epoch |
-    | ---- | ----: | ---------: |
-    | fcn-32s | 1e-10 | 31 |
-    | fcn-16s | 1e-12 | 27 |
-    | fcn-8s | 1e-14 | 19 |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  model 
+     -  lr (fixed) 
+     -  epoch 
+   * -  fcn-32s 
+     -  1e-10 
+     -  31 
+   * -  fcn-16s 
+     -  1e-12 
+     -  27 
+   * -  fcn-8s 
+     -  1e-14 
+     -  19 
+```
     (```when using the newest mxnet, you'd better using larger learning rate, such as 1e-4, 1e-5, 1e-6 instead, because the newest mxnet will do gradient normalization in SoftmaxOutput```)
 
 The training image number is only 2027, and the validation image number is 462.  

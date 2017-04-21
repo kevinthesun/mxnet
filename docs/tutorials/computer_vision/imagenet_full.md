@@ -16,10 +16,20 @@ The raw full ImageNet dataset is more than 1 TB. Before training the network, we
 Assume that we have two good storage devices [2]:
 
 ```
-    | Device                    | 4K Random Seek        | Sequential Seek |
-    | ------------------------- | --------------------- | --------------- |
-    | WD Black (HDD)            | 0.43 MB /s (110 IOPS) | 170 MB/s        |
-    | Samsung 850 PRO (SSD)     | 40 MB/s (10,000 IOPS) | 550 MB/s        |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  Device                    
+     -  4K Random Seek        
+     -  Sequential Seek 
+   * -  WD Black (HDD)            
+     -  0.43 MB /s (110 IOPS) 
+     -  170 MB/s        
+   * -  Samsung 850 PRO (SSD)     
+     -  40 MB/s (10,000 IOPS) 
+     -  550 MB/s        
+```
 ```
 
 A very naive approach to loading from a list is random seeking. If we use this approach, we will spend 677 hours with an HDD or 6.7 hours with an SSD, respectively. This is for read only. Although the results for the SSD isn't bad, a 1 TB SSD is expensive.
@@ -54,11 +64,23 @@ Train Top-1 Accuracy over 21,841 classes: 37.19%
 There is no official validation set over 21,841 classes, so we are using the ILVRC2012 validation set to check performance. Here's the result:
 
 ```
-    | Accuracy | Over 1,000 classes | Over 21,841 classes |
-    | -------- | ------------------ | ------------------- |
-    | Top-1    | 68.3%              | 41.9%               |
-    | Top-5    | 89.0%              | 69.6%               |
-    | Top=20   | 96.0%              | 83.6%               |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  Accuracy 
+     -  Over 1,000 classes 
+     -  Over 21,841 classes 
+   * -  Top-1    
+     -  68.3%              
+     -  41.9%               
+   * -  Top-5    
+     -  89.0%              
+     -  69.6%               
+   * -  Top=20   
+     -  96.0%              
+     -  83.6%               
+```
 ```
 
 We get reasonable results after nine iterations. Fewer iterations are needed to achieve stable performance, mainly because we have a larger dataset.
@@ -83,13 +105,29 @@ We can detect that there is a mountain, valley, tree, and bridge. And the predic
 Notice that there are several peaks. Let's print out the label text for the ImageNet 1K classes and 21K classes:
 
 ```
-    | Rank  | Over 1,000 classes          | Over 21,841 classes        |
-    | ----- | --------------------------- | -------------------------- |
-    | Top-1 | n09468604 valley            | n11620673 Fir              |
-    | Top-2 | n09332890 lakeside          | n11624531 Spruce           |
-    | Top-3 | n04366367 suspension bridge | n11621281 Amabilis fir     |
-    | Top-4 | n09193705 alp               | n11628456 Douglas fir      |
-    | Top-5 | n09428293 seashore          | n11627908 Mountain hemlock |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  Rank  
+     -  Over 1,000 classes          
+     -  Over 21,841 classes        
+   * -  Top-1 
+     -  n09468604 valley            
+     -  n11620673 Fir              
+   * -  Top-2 
+     -  n09332890 lakeside          
+     -  n11624531 Spruce           
+   * -  Top-3 
+     -  n04366367 suspension bridge 
+     -  n11621281 Amabilis fir     
+   * -  Top-4 
+     -  n09193705 alp               
+     -  n11628456 Douglas fir      
+   * -  Top-5 
+     -  n09428293 seashore          
+     -  n11627908 Mountain hemlock 
+```
 ```
 
 Prediction probability over 21K classes loses diversity. By carefully choosing a subset using WordNet hierarchy relation, you will get more interesting results.

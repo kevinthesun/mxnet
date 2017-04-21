@@ -145,10 +145,17 @@ The final frame accuracy was approximately 62%.
 
 Here are the results for the TIMIT and AMI test sets (using the default setup, three-layer LSTM with projection layers):
 
-	| Corpus | WER |
-	|--------|-----|
-	|TIMIT   | 18.9|
-	|AMI     | 51.7 (42.2) |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  Corpus 
+     -  WER 
+   * - TIMIT   
+     -  18.9
+   * - AMI     
+     -  51.7 (42.2) 
+```
 
 For AMI 42.2 was evaluated non-overlapped speech. The Kaldi-HMM baseline was 67.2%, and DNN was 57.5%.
 

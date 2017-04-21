@@ -47,11 +47,31 @@ We tested our model on Nexus 5:
 
 
  ```
-    |                  | Top-1 Validation on ILSVRC2012      | Time  | App Size  | Runtime Temp Memory Req |
-    | ---------------- | ----------------------------------- | ----- | ----————— | ---------------———————— |
-    | FastPoorNet      | around 52%, similar to 2011 winner  | 1s    | <10MB     |      <5MB               |
-    | Sub InceptionBN  | around 64%, similar to 2013 winner  | 2.7s  | <40MB     |      <10MB              |
-    | InceptionBN      | around 70%                          | 4s-5s | <60MB     |       10MB              |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -                   
+     -  Top-1 Validation on ILSVRC2012      
+     -  Time  
+     -  App Size  
+     -  Runtime Temp Memory Req 
+   * -  FastPoorNet      
+     -  around 52%, similar to 2011 winner  
+     -  1s    
+     -  <10MB     
+     -       <5MB               
+   * -  Sub InceptionBN  
+     -  around 64%, similar to 2013 winner  
+     -  2.7s  
+     -  <40MB     
+     -       <10MB              
+   * -  InceptionBN      
+     -  around 70%                          
+     -  4s-5s 
+     -  <60MB     
+     -        10MB              
+```
  ```
 
 These models are for demonstration only. They aren't fine-tuned for mobile devices, and there is definitely great room for improvement.  We believe making a lightweight, portable, and fast deep learning library is fun and interesting, and hope you enjoy using the library.

@@ -33,19 +33,71 @@ Convolutional neural networks are the state-of-art architecture for many image a
 
 For instructions on using these models, see [the python tutorial on using pre-trained ImageNet models](http://mxnet.io/tutorials/python/predict_imagenet.html).
 
-| Model Definition | Dataset | Model Weights | Research Basis | Contributors |
-| --- | --- | --- | --- | --- |
-| [CaffeNet](http://data.dmlc.ml/mxnet/models/imagenet/caffenet/caffenet-symbol.json) | ImageNet | [Param File](http://data.dmlc.ml/models/imagenet/caffenet/caffenet-0000.params) |   [Krizhevsky, 2012](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks) | @jspisak |
-| [Network in Network (NiN)](http://data.dmlc.ml/models/imagenet/nin/nin-symbol.json) | ImageNet | [Param File](http://data.dmlc.ml/models/imagenet/nin/nin-0000.params) |  [Lin et al.., 2014](https://arxiv.org/pdf/1312.4400v3.pdf) | @jspisak |
-| [SqueezeNet v1.1](http://data.dmlc.ml/models/imagenet/squeezenet/squeezenet_v1.1-symbol.json) | ImageNet | [Param File](http://data.dmlc.ml/models/imagenet/squeezenet/squeezenet_v1.1-0000.params) | [Iandola et al.., 2016](https://arxiv.org/pdf/1602.07360v4.pdf) | @jspisak |
-| [VGG16](http://data.dmlc.ml/models/imagenet/vgg/vgg16-symbol.json) | ImageNet | [Param File](http://data.dmlc.ml/models/imagenet/vgg/vgg16-0000.params)| [Simonyan et al.., 2015](https://arxiv.org/pdf/1409.1556v6.pdf) | @jspisak |
-| [VGG19](http://data.dmlc.ml/models/imagenet/vgg/vgg19-symbol.json) | ImageNet | [Param File](http://data.dmlc.ml/models/imagenet/vgg/vgg19-0000.params) | [Simonyan et al.., 2015](https://arxiv.org/pdf/1409.1556v6.pdf) | @jspisak |
-| [Inception v3 w/BatchNorm](http://data.dmlc.ml/models/imagenet/inception-bn/Inception-BN-symbol.json) | ImageNet | [Param File](http://data.dmlc.ml/models/imagenet/inception-bn/Inception-BN-0126.params) | [Szegedy et al.., 2015](https://arxiv.org/pdf/1512.00567.pdf) | @jspisak |
-| [ResidualNet152](http://data.dmlc.ml/models/imagenet/resnet/152-layers/resnet-152-symbol.json) | ImageNet | [Param File](http://data.dmlc.ml/models/imagenet/resnet/152-layers/resnet-152-0000.params) | [He et al.., 2015](https://arxiv.org/pdf/1512.03385v1.pdf) | @jspisak |
-| [ResNext101-64x4d](http://data.dmlc.ml/models/imagenet/resnext/101-layers/resnext-101-64x4d-symbol.json) | ImageNet | [Param File](http://data.dmlc.ml/models/imagenet/resnext/101-layers/resnext-101-64x4d-0000.params) | [Xie et al.., 2016](https://arxiv.org/pdf/1611.05431.pdf) | @Jerryzcn |
-| Fast-RCNN | PASCAL VOC | [Param File] | [Girshick, 2015](https://arxiv.org/pdf/1504.08083v2.pdf) | |
-| Faster-RCNN | PASCAL VOC | [Param File] | [Ren et al..,2016](https://arxiv.org/pdf/1506.01497v3.pdf) | |
-| Single Shot Detection (SSD) | PASCAL VOC | [Param File] | [Liu et al.., 2016](https://arxiv.org/pdf/1512.02325v4.pdf) | |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  Model Definition 
+     -  Dataset 
+     -  Model Weights 
+     -  Research Basis 
+     -  Contributors 
+   * -  [CaffeNet](http://data.dmlc.ml/mxnet/models/imagenet/caffenet/caffenet-symbol.json) 
+     -  ImageNet 
+     -  [Param File](http://data.dmlc.ml/models/imagenet/caffenet/caffenet-0000.params) 
+     -    [Krizhevsky, 2012](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks) 
+     -  @jspisak 
+   * -  [Network in Network (NiN)](http://data.dmlc.ml/models/imagenet/nin/nin-symbol.json) 
+     -  ImageNet 
+     -  [Param File](http://data.dmlc.ml/models/imagenet/nin/nin-0000.params) 
+     -   [Lin et al.., 2014](https://arxiv.org/pdf/1312.4400v3.pdf) 
+     -  @jspisak 
+   * -  [SqueezeNet v1.1](http://data.dmlc.ml/models/imagenet/squeezenet/squeezenet_v1.1-symbol.json) 
+     -  ImageNet 
+     -  [Param File](http://data.dmlc.ml/models/imagenet/squeezenet/squeezenet_v1.1-0000.params) 
+     -  [Iandola et al.., 2016](https://arxiv.org/pdf/1602.07360v4.pdf) 
+     -  @jspisak 
+   * -  [VGG16](http://data.dmlc.ml/models/imagenet/vgg/vgg16-symbol.json) 
+     -  ImageNet 
+     -  [Param File](http://data.dmlc.ml/models/imagenet/vgg/vgg16-0000.params)
+     -  [Simonyan et al.., 2015](https://arxiv.org/pdf/1409.1556v6.pdf) 
+     -  @jspisak 
+   * -  [VGG19](http://data.dmlc.ml/models/imagenet/vgg/vgg19-symbol.json) 
+     -  ImageNet 
+     -  [Param File](http://data.dmlc.ml/models/imagenet/vgg/vgg19-0000.params) 
+     -  [Simonyan et al.., 2015](https://arxiv.org/pdf/1409.1556v6.pdf) 
+     -  @jspisak 
+   * -  [Inception v3 w/BatchNorm](http://data.dmlc.ml/models/imagenet/inception-bn/Inception-BN-symbol.json) 
+     -  ImageNet 
+     -  [Param File](http://data.dmlc.ml/models/imagenet/inception-bn/Inception-BN-0126.params) 
+     -  [Szegedy et al.., 2015](https://arxiv.org/pdf/1512.00567.pdf) 
+     -  @jspisak 
+   * -  [ResidualNet152](http://data.dmlc.ml/models/imagenet/resnet/152-layers/resnet-152-symbol.json) 
+     -  ImageNet 
+     -  [Param File](http://data.dmlc.ml/models/imagenet/resnet/152-layers/resnet-152-0000.params) 
+     -  [He et al.., 2015](https://arxiv.org/pdf/1512.03385v1.pdf) 
+     -  @jspisak 
+   * -  [ResNext101-64x4d](http://data.dmlc.ml/models/imagenet/resnext/101-layers/resnext-101-64x4d-symbol.json) 
+     -  ImageNet 
+     -  [Param File](http://data.dmlc.ml/models/imagenet/resnext/101-layers/resnext-101-64x4d-0000.params) 
+     -  [Xie et al.., 2016](https://arxiv.org/pdf/1611.05431.pdf) 
+     -  @Jerryzcn 
+   * -  Fast-RCNN 
+     -  PASCAL VOC 
+     -  [Param File] 
+     -  [Girshick, 2015](https://arxiv.org/pdf/1504.08083v2.pdf) 
+     -  
+   * -  Faster-RCNN 
+     -  PASCAL VOC 
+     -  [Param File] 
+     -  [Ren et al..,2016](https://arxiv.org/pdf/1506.01497v3.pdf) 
+     -  
+   * -  Single Shot Detection (SSD) 
+     -  PASCAL VOC 
+     -  [Param File] 
+     -  [Liu et al.., 2016](https://arxiv.org/pdf/1512.02325v4.pdf) 
+     -  
+```
 
 
 ## Recurrent Neural Networks (RNNs) including LSTMs
@@ -60,11 +112,31 @@ and Gated Recurrent Units (GRU) networks. Some available datasets include:
 * [Flickr8k, COCO](http://mscoco.org/): Images with associated caption (sentences). Flickr8k consists of 8,092 images captioned by AmazonTurkers with ~40,000 captions. COCO has 328,000 images, each with 5 captions. The COCO images also come with labeled objects using segmentation algorithms.
 
 
-| Model Definition | Dataset | Model Weights | Research Basis | Contributors |
-| --- | --- | --- | --- | --- |
-| LSTM - Image Captioning | Flickr8k, MS COCO | | [Vinyals et al.., 2015](https://arxiv.org/pdf/ 1411.4555v2.pdf) | @... |
-| LSTM - Q&A System| bAbl | | [Weston et al.., 2015](https://arxiv.org/pdf/1502.05698v10.pdf) | |
-| LSTM - Sentiment Analysis| IMDB | | [Li et al.., 2015](http://arxiv.org/pdf/1503.00185v5.pdf) | |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  Model Definition 
+     -  Dataset 
+     -  Model Weights 
+     -  Research Basis 
+     -  Contributors 
+   * -  LSTM - Image Captioning 
+     -  Flickr8k, MS COCO 
+     -  
+     -  [Vinyals et al.., 2015](https://arxiv.org/pdf/ 1411.4555v2.pdf) 
+     -  @... 
+   * -  LSTM - Q&A System
+     -  bAbl 
+     -  
+     -  [Weston et al.., 2015](https://arxiv.org/pdf/1502.05698v10.pdf) 
+     -  
+   * -  LSTM - Sentiment Analysis
+     -  IMDB 
+     -  
+     -  [Li et al.., 2015](http://arxiv.org/pdf/1503.00185v5.pdf) 
+     -  
+```
 
 
 ## Generative Adversarial Networks (GANs)
@@ -74,11 +146,31 @@ neural networks: a generator network which transforms a latent vector into conte
 network that tries to distinguish between generated content and supplied "real" training content.  When properly
 trained the two achieve a [Nash equilibrium](https://en.wikipedia.org/wiki/Nash_equilibrium).
 
-| Model Definition | Dataset | Model Weights | Research Basis | Contributors |
-| --- | --- | --- | --- | --- |
-| DCGANs | ImageNet | | [Radford et al..,2016](https://arxiv.org/pdf/1511.06434v2.pdf) | @... |
-| Text to Image Synthesis |MS COCO| | [Reed et al.., 2016](https://arxiv.org/pdf/1605.05396v2.pdf) | |
-| Deep Jazz	| | | [Deepjazz.io](https://deepjazz.io) | |
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * -  Model Definition 
+     -  Dataset 
+     -  Model Weights 
+     -  Research Basis 
+     -  Contributors 
+   * -  DCGANs 
+     -  ImageNet 
+     -  
+     -  [Radford et al..,2016](https://arxiv.org/pdf/1511.06434v2.pdf) 
+     -  @... 
+   * -  Text to Image Synthesis 
+     - MS COCO
+     -  
+     -  [Reed et al.., 2016](https://arxiv.org/pdf/1605.05396v2.pdf) 
+     -  
+   * -  Deep Jazz	
+     -  
+     -  
+     -  [Deepjazz.io](https://deepjazz.io) 
+     -  
+```
 
 
 
@@ -91,9 +183,3 @@ MXNet Supports a variety of model types beyond the canonical CNN and LSTM model 
 * [Atari Video Game Emulator](http://stella.sourceforge.net/): Stella is a multi-platform Atari 2600 VCS emulator released under the GNU General Public License (GPL).
 
 
-| Model Definition | Dataset | Model Weights | Research Basis | Contributors |
-| --- | --- | --- | --- | --- |
-| Word2Vec | Google News | | [Mikolov et al.., 2013](https://arxiv.org/pdf/1310.4546v1.pdf) | @... |
-| Matrix Factorization | MovieLens 20M | | [Huang et al.., 2013](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf) | |
-| Deep Q-Network | Atari video games | | [Minh et al.., 2015](http://www.nature.com/nature/journal/v518/n7540/full/nature14236.html) | |
-| Asynchronous advantage actor-critic (A3C) | Atari video games | | [Minh et al.., 2016](https://arxiv.org/pdf/1602.01783.pdf) | |
