@@ -11,6 +11,7 @@ These tutorials introduce fundamental concepts in deep learning and their realiz
 .. toctree::
    :maxdepth: 1
 
+   basic/mxnet_mechanics
    basic/ndarray
    basic/symbol
    basic/module
