@@ -573,9 +573,9 @@ class DataParallelExecutorGroup(object):
             input_types.update({x.name: x.dtype for x in label_shapes})
 
         executor = self.symbol.simple_bind(ctx=context, grad_req=self.grad_req,
-                                           type_dict=input_types, param_names=self.param_names,
+                                           type_dict=input_types, shared_arg_names=self.param_names,
                                            shared_exec=shared_exec,
-                                           shared_data_arrays=shared_data_arrays, **input_shapes)
+                                           shared_buffer=shared_data_arrays, **input_shapes)
         self._total_exec_bytes += int(executor.debug_str().split('\n')[-3].split()[1])
         return executor
 
