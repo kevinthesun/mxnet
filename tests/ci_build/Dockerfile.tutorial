@@ -8,3 +8,12 @@ RUN apt-get -y install ipython ipython-notebook
 RUN apt-get -y install graphviz
 RUN python -m pip install -U pip
 RUN pip install virtualenv
+
+
+RUN virtualenv ENV
+
+RUN pip install --upgrade setuptools
+RUN pip install request
+RUN pip install jupyter
+RUN pip install graphviz
+RUN pip install matplotlib
