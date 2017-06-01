@@ -8,9 +8,9 @@ make html
 #Setup virtualenv and install packages
 cd ../python
 virtualenv ENV
-/workspace/python/ENV/bin/python setup.py install
 source /workspace/python/ENV/bin/activate
 pip install six
+/workspace/python/ENV/bin/python setup.py install
 
 pip install requests
 pip install jupyter
