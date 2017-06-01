@@ -2,7 +2,7 @@
 
 #Setup virtualenv and install packages
 virtualenv ENV
-source /ENV/bin/activate
+source workspace/ENV/bin/activate
 
 pip install --upgrade setuptools
 pip install requests
