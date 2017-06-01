@@ -1,12 +1,12 @@
 #!/bin/bash
 #Build mxnet and docs
 cp make/config.mk .
-make -j8 USE_CUDA=1 USE_CUDA_PATH=/usr/local/cuda USE_CUDNN=1 || exit 1
-cd docs
+make -j8 USE_CUDA=1 USE_CUDA_PATH=/usr/local/cuda USE_CUDNN=1
+cd python
+sudo python setup.py install
+cd ../docs
 make html
 
-cd ../python
-sudo python setup.py install
 sudo pip install requests
 sudo pip install jupyter
 sudo pip install graphviz
