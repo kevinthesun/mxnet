@@ -13,7 +13,7 @@ RUN pip install virtualenv
 RUN virtualenv ENV
 
 RUN pip install --upgrade setuptools
-RUN pip install request
+RUN pip install requests
 RUN pip install jupyter
 RUN pip install graphviz
 RUN pip install matplotlib
