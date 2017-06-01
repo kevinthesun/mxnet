@@ -9,7 +9,7 @@ make html
 
 #Setup virtualenv and install packages
 virtualenv ENV
-source /workspace/ENV/bin/activate
+source /workspace/docs/ENV/bin/activate
 
 pip install requests
 pip install jupyter
