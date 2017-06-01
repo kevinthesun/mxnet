@@ -9,13 +9,4 @@ RUN apt-get -y install graphviz
 RUN wget -qO- https://get.docker.com/ | sh
 RUN usermod -aG docker $(whoami)
 RUN python -m pip install -U pip
-
 RUN pip install virtualenv
-RUN virtualenv ENV
-RUN source /ENV/bin/activate
-
-RUN pip install --upgrade setuptools
-RUN pip install requests
-RUN pip install jupyter
-RUN pip install graphviz
-RUN pip install matplotlib
