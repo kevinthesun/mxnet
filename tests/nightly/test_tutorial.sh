@@ -2,5 +2,6 @@
 
 #Test tutorials
 make docs
-source ~/ENV/bin/activate
-python tests/nightly/test_tutorial.py
+source /ENV/bin/activate
+cd tests/nightly
+python test_tutorial.py
