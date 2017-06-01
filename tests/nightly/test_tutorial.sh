@@ -19,4 +19,4 @@ pip install matplotlib
 
 #Test tutorials
 cd ../tests/nightly
-python test_tutorial.py
+python test_tutorial.py || exit 1
