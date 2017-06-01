@@ -9,7 +9,6 @@ RUN apt-get -y install graphviz
 RUN apt-get -y install doxygen
 RUN apt-get -y install scala
 RUN apt-get -y install scala-doc
-RUN python -m pip install -U pip
 RUN pip install virtualenv
-RUN pip install sphinx==1.5.1 CommonMark==0.5.4 breathe mock==1.0.1 recommonmark pypandoc
+RUN pip install sphinx==1.3.5 CommonMark==0.5.4 breathe mock==1.0.1 recommonmark pypandoc
 RUN pip install --upgrade requests
