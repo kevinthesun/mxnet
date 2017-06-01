@@ -9,6 +9,7 @@ RUN apt-get -y install graphviz
 RUN apt-get -y install doxygen
 RUN apt-get -y install pandoc
 
+COPY install/ubuntu_*.sh /install/
 RUN /install/ubuntu_install_scala.sh
 
 RUN python -m pip install -U pip
