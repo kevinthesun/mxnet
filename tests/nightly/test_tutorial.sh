@@ -10,6 +10,7 @@ make html
 #Setup virtualenv and install packages
 virtualenv ENV
 source /workspace/docs/ENV/bin/activate
+pip install six
 
 pip install requests
 pip install jupyter
@@ -17,7 +18,7 @@ pip install graphviz
 pip install matplotlib
 
 cd ../python
-python setup.py install
+sudo python setup.py install
 
 #Test tutorials
 cd ../tests/nightly
