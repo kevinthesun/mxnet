@@ -13,11 +13,6 @@ sudo apt-get -y install pandoc
 sudo apt-get -y install python-tk
 sudo apt-get -y install python-opencv
 
-for entry in "/usr/lib/python2.7/dist-packages"/*
-do
-  echo "$entry"
-done
-
 sudo python -m pip install -U pip
 sudo pip install virtualenv
 sudo pip install sphinx==1.5.1 CommonMark==0.5.4 breathe mock==1.0.1 recommonmark pypandoc
@@ -35,7 +30,7 @@ make html
 cd ../python
 virtualenv ENV
 source /home/ec2-user/workspace/NightlyTutorialUbuntu/mxnet/python/ENV/bin/activate
-cp /usr/lib/python2.7/dist-packages/cv2.x86_64-linux-gnu.so /home/ec2-user/workspace/NightlyTutorialUbuntu/mxnet/python/ENV/lib/python2.7/site-packages
+cp /usr/lib/python2.7/dist-packages/cv2.so /home/ec2-user/workspace/NightlyTutorialUbuntu/mxnet/python/ENV/lib/python2.7/site-packages
 cp /usr/lib/python2.7/dist-packages/cv.py /home/ec2-user/workspace/NightlyTutorialUbuntu/mxnet/python/ENV/lib/python2.7/site-packages
 pip install six
 /home/ec2-user/workspace/NightlyTutorialUbuntu/mxnet/python/ENV/bin/python setup.py install
