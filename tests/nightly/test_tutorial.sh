@@ -1,9 +1,10 @@
 #!/bin/bash
 
+sudo apt-get update && apt-get install -y \
+    maven default-jdk
 wget http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb && \
     dpkg -i scala-2.11.8.deb && rm scala-2.11.8.deb
 
-sudo apt-get update
 sudo apt-get -y install git
 sudo apt-get -y install python-opencv
 sudo apt-get -y install ipython ipython-notebook
@@ -25,9 +26,9 @@ make html
 #Setup virtualenv and install packages
 cd ../python
 virtualenv ENV
-source /workspace/python/ENV/bin/activate
+source /home/ec2-user/workspace/NightlyTutorialUbuntu/python/ENV/bin/activate
 pip install six
-/workspace/python/ENV/bin/python setup.py install
+/home/ec2-user/workspace/NightlyTutorialUbuntu/python/ENV/bin/python setup.py install
 
 pip install requests
 pip install jupyter
