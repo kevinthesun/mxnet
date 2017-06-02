@@ -11,6 +11,7 @@ sudo apt-get -y install ipython ipython-notebook
 sudo apt-get -y install graphviz
 sudo apt-get -y install doxygen
 sudo apt-get -y install pandoc
+sudo apt-get -y install python-tk
 
 sudo python -m pip install -U pip
 sudo pip install virtualenv
