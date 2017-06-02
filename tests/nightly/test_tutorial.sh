@@ -3,7 +3,7 @@
 sudo apt-get update && apt-get install -y \
     maven default-jdk
 wget http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb && \
-    dpkg -i scala-2.11.8.deb && rm scala-2.11.8.deb
+    sudo dpkg -i scala-2.11.8.deb && rm scala-2.11.8.deb
 
 sudo apt-get -y install git
 sudo apt-get -y install python-opencv
