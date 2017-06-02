@@ -11,6 +11,7 @@ sudo apt-get -y install graphviz
 sudo apt-get -y install doxygen
 sudo apt-get -y install pandoc
 sudo apt-get -y install python-tk
+sudo apt-get -y install python-opencv
 
 sudo python -m pip install -U pip
 sudo pip install virtualenv
@@ -29,7 +30,8 @@ make html
 cd ../python
 virtualenv ENV
 source /home/ec2-user/workspace/NightlyTutorialUbuntu/mxnet/python/ENV/bin/activate
-sudo apt-get -y install python-opencv
+cp /usr/lib/python2.7/dist-packages/cv2.x86_64-linux-gnu.so /home/ec2-user/workspace/NightlyTutorialUbuntu/mxnet/python/ENV/lib/python2.7/site-packages
+cp /usr/lib/python2.7/dist-packages/cv.py /home/ec2-user/workspace/NightlyTutorialUbuntu/mxnet/python/ENV/lib/python2.7/site-packages
 pip install six
 /home/ec2-user/workspace/NightlyTutorialUbuntu/mxnet/python/ENV/bin/python setup.py install
 
