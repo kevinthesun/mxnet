@@ -13,6 +13,11 @@ sudo apt-get -y install pandoc
 sudo apt-get -y install python-tk
 sudo apt-get -y install python-opencv
 
+for entry in "/usr/lib/python2.7/dist-packages"/*
+do
+  echo "$entry"
+done
+
 sudo python -m pip install -U pip
 sudo pip install virtualenv
 sudo pip install sphinx==1.5.1 CommonMark==0.5.4 breathe mock==1.0.1 recommonmark pypandoc
@@ -22,7 +27,7 @@ sudo pip install --upgrade requests
 git clone https://github.com/dmlc/mxnet.git --recursive
 cd mxnet
 cp make/config.mk .
-make -j8 USE_CUDA=1 USE_CUDA_PATH=/usr/local/cuda USE_CUDNN=1
+make -j8 USE_CUDA=1 USE_CUDA_PATH=/usr/local/cuda USE_CUDNN=1 || exit 1
 cd docs
 make html
 
