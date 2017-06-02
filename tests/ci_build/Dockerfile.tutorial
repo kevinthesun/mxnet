@@ -34,8 +34,6 @@ RUN apt-get update && apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew" install r-base r-base-dev
 RUN Rscript -e "install.packages('devtools', repo = 'https://cran.rstudio.com')"
 
-COPY install/ubuntu_*.sh /install/
-RUN /install/ubuntu_install_scala.sh
 RUN wget http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb && \
     dpkg -i scala-2.11.8.deb && rm scala-2.11.8.deb
 
