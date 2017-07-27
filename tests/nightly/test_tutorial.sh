@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 sudo apt-get update && apt-get install -y \
     maven default-jdk
