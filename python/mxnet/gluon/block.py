@@ -12,6 +12,14 @@ from .parameter import Parameter, ParameterDict, DeferredInitializationError
 from .utils import _indent
 
 
+class Recorder(object):
+    records = {}
+    def __init__(self, scope, param):
+        if scope not in Recorder.records:
+            Recorder.records[scope] = [param]
+        else:
+            Recorder.records[scope].append(param)
+
 class _BlockScope(object):
     """Scope for collecting child `Block`s."""
     _current = None
@@ -248,6 +256,7 @@ class Block(object):
 
     def __call__(self, *args):
         """Calls forward. Only accepts positional arguments."""
+        Recorder('gluon', self._params)
         return self.forward(*args)
 
     def forward(self, *args):
