@@ -37,9 +37,7 @@ then
     make docs || exit 1
     echo -e "$latest_tag\n$(cat $tag_list_file)" > "$tag_list_file"
     cat $tag_list_file
-    cd "docs/build_version_doc"
-    python AddVersion.py --file_path "../_build/html/" --current_version "$latest_tag"
-    cd ../..
+    python docs/build_version_doc/AddVersion.py --file_path "docs/_build/html/" --current_version "$latest_tag"
     cp -a "docs/_build/html/." "$local_build"
     cp $tag_list_file "$local_build/tag.txt"
     rm -rf "$web_folder/.git"
@@ -60,8 +58,7 @@ make docs || exit 1
 
 rm -rfv "$web_folder/versions/master/*"
 cp -a "docs/_build/html/." "$web_folder/versions/master"
-cd "docs/build_version_doc"
-python AddVersion.py --file_path "../../$web_folder/versions/master"
+python AddVersion.py --file_path "$web_folder/versions/master"
 
 # Update version list for all previous version website
 if [ $latest_tag != ${tag_list[0]} ]
@@ -69,7 +66,7 @@ then
     total=${#tag_list[*]}
     for (( i=0; i<=$(( $total -1 )); i++ ))
     do
-        python AddVersion.py --file_path "../../$web_folder/versions/${tag_list[$i]}" \
+        python AddVersion.py --file_path "$web_folder/versions/${tag_list[$i]}" \
                              --current_version "${tag_list[$i]}"
     done
 fi
