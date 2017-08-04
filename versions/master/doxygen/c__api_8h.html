@@ -343,6 +343,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a6a9a4608136959389db02ad938201a67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__api_8h.html#a6a9a4608136959389db02ad938201a67">MXImperativeInvoke</a> (<a class="el" href="c__api_8h.html#aa2e96133f49cfdc1095da6cd08afbce0">AtomicSymbolCreator</a> creator, int num_inputs, <a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *inputs, int *num_outputs, <a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> **outputs, int num_params, const char **param_keys, const char **param_vals)</td></tr>
 <tr class="memdesc:a6a9a4608136959389db02ad938201a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">invoke a nnvm op and imperative function  <a href="#a6a9a4608136959389db02ad938201a67">More...</a><br/></td></tr>
 <tr class="separator:a6a9a4608136959389db02ad938201a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75939e5be09a150d4d8905c9fd6e986e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__api_8h.html#a75939e5be09a150d4d8905c9fd6e986e">MXAutogradSetIsRecording</a> (int is_recording, int *prev)</td></tr>
+<tr class="memdesc:a75939e5be09a150d4d8905c9fd6e986e"><td class="mdescLeft">&#160;</td><td class="mdescRight">set whether to record operator for autograd  <a href="#a75939e5be09a150d4d8905c9fd6e986e">More...</a><br/></td></tr>
+<tr class="separator:a75939e5be09a150d4d8905c9fd6e986e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cf2b0aa3ff66119fe793f6ed82b61b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__api_8h.html#a9cf2b0aa3ff66119fe793f6ed82b61b8">MXAutogradSetIsTraining</a> (int is_training, int *prev)</td></tr>
 <tr class="memdesc:a9cf2b0aa3ff66119fe793f6ed82b61b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">set whether to record operator for autograd  <a href="#a9cf2b0aa3ff66119fe793f6ed82b61b8">More...</a><br/></td></tr>
 <tr class="separator:a9cf2b0aa3ff66119fe793f6ed82b61b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -355,6 +358,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a133d10a566764530bf3172e52afbe561"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__api_8h.html#a133d10a566764530bf3172e52afbe561">MXAutogradBackward</a> (<a class="el" href="c__api_8h.html#a796e7ef8260ef40b24af7d1082aa2d84">mx_uint</a> num_output, <a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *output_handles, <a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *ograd_handles, int retain_graph)</td></tr>
 <tr class="memdesc:a133d10a566764530bf3172e52afbe561"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the gradient of outputs w.r.t variabels  <a href="#a133d10a566764530bf3172e52afbe561">More...</a><br/></td></tr>
 <tr class="separator:a133d10a566764530bf3172e52afbe561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57a5d1ed585f9f431a31f921b4ca00ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__api_8h.html#a57a5d1ed585f9f431a31f921b4ca00ab">MXAutogradBackwardEx</a> (<a class="el" href="c__api_8h.html#a796e7ef8260ef40b24af7d1082aa2d84">mx_uint</a> num_output, <a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *output_handles, <a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *ograd_handles, int retain_graph, int is_train)</td></tr>
+<tr class="memdesc:a57a5d1ed585f9f431a31f921b4ca00ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the gradient of outputs w.r.t variabels  <a href="#a57a5d1ed585f9f431a31f921b4ca00ab">More...</a><br/></td></tr>
+<tr class="separator:a57a5d1ed585f9f431a31f921b4ca00ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46d056bad70ea014110923da41524cfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__api_8h.html#a46d056bad70ea014110923da41524cfc">MXCreateCachedOp</a> (<a class="el" href="c__api_8h.html#a301e9a7722b326126defdd39ccd99b37">SymbolHandle</a> handle, <a class="el" href="c__api_8h.html#aac4a2be6e40b0869bcc390a573a7e489">CachedOpHandle</a> *out)</td></tr>
 <tr class="memdesc:a46d056bad70ea014110923da41524cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">create cached operator  <a href="#a46d056bad70ea014110923da41524cfc">More...</a><br/></td></tr>
 <tr class="separator:a46d056bad70ea014110923da41524cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -466,6 +472,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad8f92bb15e11058abe12959cfc4dcbb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__api_8h.html#ad8f92bb15e11058abe12959cfc4dcbb3">MXExecutorBackward</a> (<a class="el" href="c__api_8h.html#a6f224ee35892507405ced8429d874726">ExecutorHandle</a> handle, <a class="el" href="c__api_8h.html#a796e7ef8260ef40b24af7d1082aa2d84">mx_uint</a> len, <a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *head_grads)</td></tr>
 <tr class="memdesc:ad8f92bb15e11058abe12959cfc4dcbb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Excecutor run backward.  <a href="#ad8f92bb15e11058abe12959cfc4dcbb3">More...</a><br/></td></tr>
 <tr class="separator:ad8f92bb15e11058abe12959cfc4dcbb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a211f3e0c6270271ce4fe79228dd0c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__api_8h.html#a3a211f3e0c6270271ce4fe79228dd0c2">MXExecutorBackwardEx</a> (<a class="el" href="c__api_8h.html#a6f224ee35892507405ced8429d874726">ExecutorHandle</a> handle, <a class="el" href="c__api_8h.html#a796e7ef8260ef40b24af7d1082aa2d84">mx_uint</a> len, <a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *head_grads, int is_train)</td></tr>
+<tr class="memdesc:a3a211f3e0c6270271ce4fe79228dd0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Excecutor run backward.  <a href="#a3a211f3e0c6270271ce4fe79228dd0c2">More...</a><br/></td></tr>
+<tr class="separator:a3a211f3e0c6270271ce4fe79228dd0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a442845c8ef89d4c849f468ea2b7717f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__api_8h.html#a442845c8ef89d4c849f468ea2b7717f7">MXExecutorOutputs</a> (<a class="el" href="c__api_8h.html#a6f224ee35892507405ced8429d874726">ExecutorHandle</a> handle, <a class="el" href="c__api_8h.html#a796e7ef8260ef40b24af7d1082aa2d84">mx_uint</a> *out_size, <a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> **out)</td></tr>
 <tr class="memdesc:a442845c8ef89d4c849f468ea2b7717f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get executor's head NDArray.  <a href="#a442845c8ef89d4c849f468ea2b7717f7">More...</a><br/></td></tr>
 <tr class="separator:a442845c8ef89d4c849f468ea2b7717f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1111,6 +1120,63 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a57a5d1ed585f9f431a31f921b4ca00ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int MXAutogradBackwardEx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="c__api_8h.html#a796e7ef8260ef40b24af7d1082aa2d84">mx_uint</a>&#160;</td>
+          <td class="paramname"><em>num_output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *&#160;</td>
+          <td class="paramname"><em>output_handles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *&#160;</td>
+          <td class="paramname"><em>ograd_handles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>retain_graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>is_train</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compute the gradient of outputs w.r.t variabels </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_output</td><td>number of output NDArray </td></tr>
+    <tr><td class="paramname">output_handles</td><td>output NDArrays </td></tr>
+    <tr><td class="paramname">ograd_handles</td><td>head gradient for NDArrays </td></tr>
+    <tr><td class="paramname">retain_graph</td><td>whether to keep the graph after backward </td></tr>
+    <tr><td class="paramname">is_train</td><td>whether to do backward for training or inference </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 when success, -1 when failure happens </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a4ea5441aa16bff2121855a5afb7be84e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1188,6 +1254,42 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">num_var</td><td>number of variable NDArrays </td></tr>
     <tr><td class="paramname">var_handles</td><td>variable NDArrays </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 when success, -1 when failure happens </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a75939e5be09a150d4d8905c9fd6e986e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int MXAutogradSetIsRecording </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>is_recording</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>prev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set whether to record operator for autograd </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is_recording</td><td>1 when recording, 0 when not recording. </td></tr>
+    <tr><td class="paramname">prev</td><td>returns the previous status before this set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1703,6 +1805,56 @@ Functions</h2></td></tr>
     <tr><td class="paramname">handle</td><td>execute handle </td></tr>
     <tr><td class="paramname">len</td><td>lenth </td></tr>
     <tr><td class="paramname">head_grads</td><td>NDArray handle for heads' gradient</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 when success, -1 when failure happens </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3a211f3e0c6270271ce4fe79228dd0c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="c__predict__api_8h.html#a5b0e47dde55f9b2f58b99fab92d1e0ac">MXNET_DLL</a> int MXExecutorBackwardEx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="c__api_8h.html#a6f224ee35892507405ced8429d874726">ExecutorHandle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="c__api_8h.html#a796e7ef8260ef40b24af7d1082aa2d84">mx_uint</a>&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="c__api_8h.html#a99c2939783499d2a5ce0d76881dce9df">NDArrayHandle</a> *&#160;</td>
+          <td class="paramname"><em>head_grads</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>is_train</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Excecutor run backward. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>execute handle </td></tr>
+    <tr><td class="paramname">len</td><td>lenth </td></tr>
+    <tr><td class="paramname">head_grads</td><td>NDArray handle for heads' gradient </td></tr>
+    <tr><td class="paramname">is_train</td><td>int value to indicate whether the backward pass is for evaluation</td></tr>
   </table>
   </dd>
 </dl>
@@ -6864,7 +7016,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 1 2017 21:03:36 for mxnet by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 4 2017 21:04:52 for mxnet by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

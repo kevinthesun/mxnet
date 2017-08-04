@@ -443,7 +443,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialize a list of key-value pair to the store. </p>
-<p>One must initalize the key before <a class="el" href="classmxnet_1_1KVStore.html#a56a3b6d687700f7c71310cd47ab5a54c">Push</a> and <a class="el" href="classmxnet_1_1KVStore.html#a98e041793c133337cecc441e441ed721">Pull</a>, and a key should be only initialized once</p>
+<p>One must initialize the key before <a class="el" href="classmxnet_1_1KVStore.html#a56a3b6d687700f7c71310cd47ab5a54c">Push</a> and <a class="el" href="classmxnet_1_1KVStore.html#a98e041793c133337cecc441e441ed721">Pull</a>, and a key should be only initialized once</p>
 <p>It returns after data have been initialized successfully.</p>
 <p>For multiple workers, all workers must call <a class="el" href="classmxnet_1_1KVStore.html#af4e56c1f2b90bdd02e2c4e7d2abf6265">Init</a>. But only worker 0 (<a class="el" href="classmxnet_1_1KVStore.html#a262ef45340106fdb5c2a296c3cb711b1">get_rank()</a> == 0)'s values are used for initialization. So others' values can be empty (but not keys). This function blocks until all workers are finished. That means, any worker can push and pull on the keys now.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1063,7 +1063,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 1 2017 21:03:37 for mxnet by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 4 2017 21:04:52 for mxnet by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['backward',['Backward',['../classmxnet_1_1Executor.html#a15157351d5770c4e5e7e652b2a0e2cbd',1,'mxnet::Executor::Backward()'],['../classmxnet_1_1Operator.html#ad32d74b9bf56caf920b5e6379d2bb259',1,'mxnet::Operator::Backward()']]],
+  ['backward',['Backward',['../classmxnet_1_1Executor.html#aa2fd32510a718aff38323e63be0d65e3',1,'mxnet::Executor::Backward()'],['../classmxnet_1_1Operator.html#ad32d74b9bf56caf920b5e6379d2bb259',1,'mxnet::Operator::Backward()']]],
   ['backwardinplaceoption',['BackwardInplaceOption',['../classmxnet_1_1OperatorProperty.html#a67231a5a1525ec7480de98a79dce0194',1,'mxnet::OperatorProperty']]],
   ['backwardinputs',['BackwardInputs',['../classmxnet_1_1OperatorProperty.html#a9f488509e132094ce7e79125ce853042',1,'mxnet::OperatorProperty']]],
   ['backwardresource',['BackwardResource',['../classmxnet_1_1OperatorProperty.html#ade7720a3e0ebba67d89978925a77609b',1,'mxnet::OperatorProperty']]],

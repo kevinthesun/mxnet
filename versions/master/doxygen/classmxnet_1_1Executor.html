@@ -126,9 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e261d44065848e434c527000d4390c8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmxnet_1_1Executor.html#a3e261d44065848e434c527000d4390c8">PartialForward</a> (bool is_train, int step, int *step_left)=0</td></tr>
 <tr class="memdesc:a3e261d44065848e434c527000d4390c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a Partial Forward operation of <a class="el" href="classmxnet_1_1Operator.html" title="Operator interface. Operator defines basic operation unit of optimized computation graph in mxnet...">Operator</a>. Only issue operation specified by step. The caller must keep calling PartialForward with increasing steps, until step_left=0.  <a href="#a3e261d44065848e434c527000d4390c8">More...</a><br/></td></tr>
 <tr class="separator:a3e261d44065848e434c527000d4390c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15157351d5770c4e5e7e652b2a0e2cbd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmxnet_1_1Executor.html#a15157351d5770c4e5e7e652b2a0e2cbd">Backward</a> (const std::vector&lt; <a class="el" href="classmxnet_1_1NDArray.html">NDArray</a> &gt; &amp;head_grads)=0</td></tr>
-<tr class="memdesc:a15157351d5770c4e5e7e652b2a0e2cbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a Backward operation of the <a class="el" href="classmxnet_1_1Operator.html" title="Operator interface. Operator defines basic operation unit of optimized computation graph in mxnet...">Operator</a>. This must be called after Forward. After this operation, NDArrays specified by grad_in_args_store will be updated accordingly. User is allowed to pass in an empty Array if the head node is loss function and head gradeitn is not needed.  <a href="#a15157351d5770c4e5e7e652b2a0e2cbd">More...</a><br/></td></tr>
-<tr class="separator:a15157351d5770c4e5e7e652b2a0e2cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2fd32510a718aff38323e63be0d65e3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmxnet_1_1Executor.html#aa2fd32510a718aff38323e63be0d65e3">Backward</a> (const std::vector&lt; <a class="el" href="classmxnet_1_1NDArray.html">NDArray</a> &gt; &amp;head_grads, bool is_train=true)=0</td></tr>
+<tr class="memdesc:aa2fd32510a718aff38323e63be0d65e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a Backward operation of the <a class="el" href="classmxnet_1_1Operator.html" title="Operator interface. Operator defines basic operation unit of optimized computation graph in mxnet...">Operator</a>. This must be called after Forward. After this operation, NDArrays specified by grad_in_args_store will be updated accordingly. User is allowed to pass in an empty Array if the head node is loss function and head gradeitn is not needed.  <a href="#aa2fd32510a718aff38323e63be0d65e3">More...</a><br/></td></tr>
+<tr class="separator:aa2fd32510a718aff38323e63be0d65e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3803afcb87e4c69940c8d3d88a03e6ee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmxnet_1_1Executor.html#a3803afcb87e4c69940c8d3d88a03e6ee">Print</a> (std::ostream &amp;os) const </td></tr>
 <tr class="memdesc:a3803afcb87e4c69940c8d3d88a03e6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">print the execution plan info to output stream.  <a href="#a3803afcb87e4c69940c8d3d88a03e6ee">More...</a><br/></td></tr>
 <tr class="separator:a3803afcb87e4c69940c8d3d88a03e6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,7 +259,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a15157351d5770c4e5e7e652b2a0e2cbd"></a>
+<a class="anchor" id="aa2fd32510a718aff38323e63be0d65e3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -270,8 +270,18 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">virtual void mxnet::Executor::Backward </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="classmxnet_1_1NDArray.html">NDArray</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>head_grads</em></td><td>)</td>
+          <td class="paramname"><em>head_grads</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_train</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -681,7 +691,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 1 2017 21:03:37 for mxnet by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 4 2017 21:04:52 for mxnet by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
